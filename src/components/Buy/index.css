@@ -1,0 +1,96 @@
+.buy-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buy-detail .buy-image {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.buy-detail .buy-image img {
+    width: 50%;
+    height: 100%;
+    min-width: 300px;
+    max-width: 400px;
+    object-fit: cover;
+}
+
+.buy-detail .buy-titles {
+    width: 40%;
+}
+
+.buy-titles .buy-condition {
+    font-size: 14px;
+    color: rgb(107, 107, 107);
+}
+
+.buy-titles .buy-price {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.buy-titles .buy-price .buy-price-decimals {
+    font-size: 14px;
+    vertical-align: text-top;
+}
+
+.buy-buy{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.buy-titles .buy-buy button {
+    background-color: #3483fa;
+    border: 0px;
+    color: #fff;
+    width: 90%;
+    max-width: 350px;
+    padding: 15px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.buy-description {
+    width: 100%;
+    margin-top: 15px;
+    white-space: pre-line;
+}
+
+.buy-description span {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.buy-freeship{
+    color: #00a650;
+    letter-spacing: .2px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 1130px) {
+    .buy-detail .buy-titles {
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+    .buy-detail .buy-titles .buy-condition {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .buy-detail .buy-titles .buy-title {
+        text-align: justify;
+    }
+
+    .buy-titles .buy-buy button {
+        min-width: 100%;
+    }
+}

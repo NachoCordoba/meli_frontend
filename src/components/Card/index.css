@@ -1,0 +1,8 @@
+.card-container {
+    border-radius: 5px;
+    background-color: white;
+}
+
+.card-content {
+    padding: 35px;
+}

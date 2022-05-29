@@ -1,0 +1,43 @@
+.buy-listitem-content {
+    padding: 5px 15px 5px 15px;
+    border-bottom: thin solid #eee;
+    display: flex;
+    cursor: pointer;
+}
+
+.buy-listitem-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-listitem-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 25px;
+
+    width: 70%;
+}
+
+.buy-listitem-price {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.buy-listitem-location {
+    font-size: 14px;
+    color: rgb(107, 107, 107);
+}
+
+.buy-listitem-image .buy-image {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+}
+
+.buy-listitem-freeship{
+    color: #00a650;
+    letter-spacing: .2px;
+    font-size: 14px;
+}

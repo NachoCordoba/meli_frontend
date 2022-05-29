@@ -1,0 +1,26 @@
+.navbar-container {
+    background-color: #fff159;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 25px;
+    align-items: center;
+}
+
+.navbar-logo-container{
+    height: 34px;
+    width: 134px;
+}
+
+.navbar-logo {
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__large_plus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    text-indent: -999%;
+    height: 34px;
+    width: 134px;
+}
