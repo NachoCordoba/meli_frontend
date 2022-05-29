@@ -6,6 +6,7 @@ import BuyList from "../../components/BuyList";
 import Loader from "../../components/Loader";
 import ItemList, { initialItemList } from "../../models/item-list.model";
 import "./index.css";
+import { toast } from "react-toastify";
 
 const ItemsList = () => {
   const [listItem, setListItems] = useState<ItemList>(initialItemList);
@@ -20,18 +21,24 @@ const ItemsList = () => {
 
   useEffect(() => {
     const getItems = async () => {
-      setLoading(true);
-      let query = "";
-      if (queryParams.get("search")) query = `?q=${queryParams.get("search")}`;
+      try {
+        setLoading(true);
+        let query = "";
+        if (queryParams.get("search"))
+          query = `?q=${queryParams.get("search")}`;
 
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/items${query}`
-      );
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/items${query}`
+        );
 
-      if (!response.data) throw new Error("Error");
+        if (!response.data) throw new Error("Error");
 
-      setListItems(response.data);
-      setLoading(false);
+        setListItems(response.data);
+      } catch (err: any) {
+        toast(err.message, { type: "error" });
+      } finally {
+        setLoading(false);
+      }
     };
 
     getItems();

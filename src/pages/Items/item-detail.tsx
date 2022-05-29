@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -9,6 +9,7 @@ import ItemDetail, {
   initDetaulItemDetail,
 } from "../../models/item-detail.model";
 import "./index.css";
+import { toast } from "react-toastify";
 
 const ItemDetails = () => {
   const { id } = useParams<"id">();
@@ -18,13 +19,24 @@ const ItemDetails = () => {
 
   useEffect(() => {
     const getItemDetail = async () => {
-      setLoading(true);
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/items/${id}`
-      );
+      try {
+        setLoading(true);
+        const response = await axios.get<ItemDetail>(
+          `${process.env.REACT_APP_API_URL}/items/${id}`
+        );
 
-      setItem(response.data);
-      setLoading(false);
+        setItem(response.data);
+      } catch (err: any) {
+        let message = err.message;
+        if (axios.isAxiosError(err)) {
+          const axiosError = err as AxiosError<any>;
+          message = axiosError.response?.data.message;
+        }
+
+        toast(message, { type: "error" });
+      } finally {
+        setLoading(false);
+      }
     };
 
     getItemDetail();
