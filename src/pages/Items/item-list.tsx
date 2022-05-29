@@ -52,14 +52,7 @@ const ItemsList = () => {
         ) : (
           <>
             <Breadcrumb items={listItem.categories} />
-            <BuyList
-              itemList={{
-                author: { name: "Ignacio", lastname: "Cordoba" },
-                categories: [],
-                items: listItem.items,
-              }}
-              onSelectItem={onSelectItem}
-            />
+            <BuyList itemList={listItem} onSelectItem={onSelectItem} />
           </>
         )}
       </div>
